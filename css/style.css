@@ -1,51 +1,106 @@
-@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap");
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkgrey;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-.mainCountry {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.btn {
+
+.myChartContainer {
+    width: 80vw;
+}
+
+.continentBtn {
     padding: 5px;
+    margin-top: 10px;
+}
+
+.CiteisBtns {
+    background-color: lightskyblue;
+    padding: 2px;
     margin: 5px;
-    font-size: 17px;
-    background-color: lightblue;
-    border: 2px solid lightcyan;
-    border-radius: 0.3rem;
-    color: rgb(255, 111, 0);
-}
-.allCountry {
-    background-color: rgb(104, 148, 148);
-    position: absolute;
-    min-height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.allCountry h1 {
     color: white;
-    text-shadow: black 5px 5px 5px;
-    font-size: 2rem;
-    margin-bottom: 10rem;
-}
-.allCountry .contintsSelect button {
-    box-shadow: 5px 4px 5px black;
-    color: black;
-    padding: 5px;
-    margin-bottom: 10px;
-}
-.chart {
-    width: 60vw;
+    cursor: pointer;
+    border: solid 1px;
+    border-radius: 5px;
+    width: fit-content;
     height: fit-content;
 }
-.hidden {
+.CiteisBtns:hover {
+    color: lightseagreen;
+
+
+}
+
+.city {
+    font-size: 0.5rem;
+}
+
+.cityCon {
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 20px);
+}
+
+.title {
+    margin: 7px;
+}
+
+.turnScreen {
     display: none;
+}
+
+@media (max-width: 1000px) {
+    .myChartContainer {
+        width: 600px;
+    }
+
+    .cityCon {
+        width: calc(100% - 230px);
+    }
+}
+
+@media (max-width: 600px) {
+    .myChartContainer {
+        width: 400px;
+    }
+
+    .cityCon {
+        width: calc(100% - 230px);
+    }
+}
+
+@media (max-width: 600px) {
+    .myChartContainer {
+        display: none;
+    }
+    .cityCon {
+        display: none;
+    }
+    .continentBtn {
+        display: none;
+    }
+    .myChartContainer {
+        display: none;
+    }
+    .turnScreen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        padding: 20px;
+    }
+    .turnScreen h1 {
+        text-align: center;
+        font-size: 50px;
+    }
 }

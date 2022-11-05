@@ -4,28 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/script.js" defer type="module"></script>
     <script src="/app.js" defer type="module"></script>
+    <script src="/script.js" defer type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>world population</title>
 </head>
 <body>
-    <div class="allCountry">
-        <h2>World Population</h2>
-        <h1>choose your country</h1>
-        <div class="contintsSelect">
-            <button>Africa</button>
-            <button>Americas</button>
-            <button>Asia</button>
-            <button>Europe</button>
-            <button>Oceania</button>
-        </div>
+    <h3 class="title">World Population</h3>
+    <div class="continentBtn">
+        <button class="america CiteisBtns">America</button>
+        <button class="Africa CiteisBtns">Africa</button>
+        <button class="Asia CiteisBtns">Asia</button>
+        <button class="Europe CiteisBtns">Europe</button>
+        <button class="Oceania CiteisBtns">Oceania</button>
     </div>
-    <div class="mainCountry">
-        <div class="chart"></div>
-        <div class="countryBtns"></div>
+    <div class="myChartContainer">
+        <canvas class="myChart"></canvas>
+    </div>
+    <div class="cityCon">
+        <div class="citeisBtnsContainer"></div>
+    </div>
+    <div class="turnScreen">
+        <h2>Plaese rotate the screen</h2>
     </div>
 </body>
 </html>
