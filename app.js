@@ -1,6 +1,6 @@
 
 const continents = ["America", "Africa", "Asia", "Europe", "Oceania"]
-const worldObj = {};
+let worldObj = {};
 const AmericaBtn = document.querySelector('.america');
 const AfricaBtn = document.querySelector('.africa');
 const AsiaBtn = document.querySelector('.asia');
@@ -56,7 +56,7 @@ const fetchDataForcountry = async (country) => {
             body: JSON.stringify({
                 'limit': 35,
                 'order': "asc",
-                'orderBy': "populationCounts",
+                'orderBy': "name",
                 'country': country,
             }),
         });

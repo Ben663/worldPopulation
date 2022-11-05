@@ -15,9 +15,8 @@ body {
 }
 
 .myChartContainer {
-    width: 80vw;
+    width: 50vw;
 }
-
 .continentBtn {
     padding: 5px;
     margin-top: 10px;
@@ -25,35 +24,31 @@ body {
 
 .CiteisBtns {
     background-color: lightskyblue;
-    padding: 2px;
+    padding: 5px;
     margin: 5px;
     color: white;
     cursor: pointer;
-    border: solid 1px;
+    border: solid 2px ;
     border-radius: 5px;
     width: fit-content;
     height: fit-content;
 }
 .CiteisBtns:hover {
     color: lightseagreen;
-
-
 }
-
 .city {
-    font-size: 0.5rem;
+    font-size: 1rem;
 }
 
 .cityCon {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: calc(100% - 20px);
 }
-
 .title {
     margin: 7px;
 }
-
 .turnScreen {
     display: none;
 }
@@ -99,7 +94,7 @@ body {
         height: 100vh;
         padding: 20px;
     }
-    .turnScreen h1 {
+    .turnScreen h2 {
         text-align: center;
         font-size: 50px;
     }
