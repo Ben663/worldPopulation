@@ -24,11 +24,11 @@ body {
 
 .CiteisBtns {
     background-color: lightskyblue;
-    padding: 5px;
+    padding: 3px;
     margin: 5px;
     color: white;
     cursor: pointer;
-    border: solid 2px ;
+    border: solid 1px;
     border-radius: 5px;
     width: fit-content;
     height: fit-content;
@@ -37,13 +37,11 @@ body {
     color: lightseagreen;
 }
 .city {
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
-
 .cityCon {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: calc(100% - 20px);
 }
 .title {

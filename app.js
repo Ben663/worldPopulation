@@ -9,7 +9,7 @@ const OceaniaBtn = document.querySelector('.oceania');
 const btnsContainer = document.querySelector('.continentBtn');
 const citeisBtnsContainer = document.querySelector('.citeisBtnsContainer');
 const cityButton = document.querySelector('.citeisBtnsContainer');
-const title = document.querySelector('title');
+const title = document.querySelector('.title');
 
 const fetchData = async (url) => {
     try {
@@ -32,7 +32,7 @@ const getCountriesData = async () => {
             const countryPopulation = currentRegion[j].population;
             const flag = currentRegion[j].flags;
             const neighbors = (currentRegion[j].borders !== undefined ? currentRegion[j].borders.length : 0);
-            fillObject(worldObj[continentName], countryOfficialName, countryCommonName, countryPopulation, neighbors, flag, continentName);
+            fillObject(worldObj[continentName], countryOfficialName, countryCommonName, countryPopulation, flag, neighbors, continentName);
         }
     }
 };
@@ -67,9 +67,9 @@ const fetchDataForcountry = async (country) => {
     }
 };
 async function checkCommonOrOfficial(obj) {
-    const data = await fetchDataForcountry(obj.CommonName);
+    const data = await fetchDataForcountry(obj.commonName);
     if (data.error) {
-        const response = await fetchDataForcountry(obj.Officialname);
+        const response = await fetchDataForcountry(obj.OfficialName);
         return response;
     }
     return data;
@@ -114,7 +114,7 @@ function bulidCityBtn (arr) {
         button.setAttribute('data-id', index);
         button.setAttribute('data-country', el.commonName);
         button.setAttribute('data-continent',el.continent);
-        button.textContent = el.CommonName;
+        button.textContent = el.commonName;
         citeisBtnsContainer.appendChild(button);
     });
 };
@@ -137,12 +137,12 @@ async function handleCiteisEvents (event) {
 };
 function handleEvents (event) {
     title.textContent = 'World Population'
-    const labels = worldObj[event.target.textContent].map(el => el.CommonName);
+    const labels = worldObj[event.target.textContent].map(el => el.commonName);
     const population = worldObj[event.target.textContent].map(el => el.population);
     createChart(labels,population);
     bulidCityBtn(worldObj[event.target.textContent]);
 };
-function start (params) {
+function start () {
     getCountriesData();
     btnsContainer.addEventListener('click', handleEvents);
     cityButton.addEventListener('click', handleCiteisEvents);
