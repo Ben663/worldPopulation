@@ -1,6 +1,9 @@
+import scriptFuncs from "./script.js";
+import script from "./script.js";
+
 
 const continentsArr = ["Africa", "Americas", "Asia", "Europe", "Oceania"]
-const worldObj = {}
+const worldObj = {};
 
 const fetchData = async (url) => {
     try {
@@ -12,7 +15,7 @@ const fetchData = async (url) => {
     }
 };
 
-async function fetchDataForCountry(array) {
+async function fetchDataForcontinents(array) {
     let arr = [];
     for (let country of array) {
         arr.push(fetchData(`https://restcountries.com/v3.1/region/${country}`));
@@ -21,10 +24,10 @@ async function fetchDataForCountry(array) {
     return res;
 };
 async function setObj() {
-    ((await fetchDataForCountry(continentsArr)).forEach((el, index) => {
+    ((await fetchDataForcontinents(continentsArr)).forEach((el, index) => {
         worldObj[continentsArr[index]] = el
     }));
-    console.log(worldObj);
+    return worldObj;
 };
 async function arrObj() {
     await setObj()
@@ -36,11 +39,10 @@ async function arrObj() {
             worldObj[continent][index] = { name: { common, official }, population, continents, flags, borders }
         })
     }
-}
+};
 arrObj();
 
-
-const fetchDataForcity = async (country) => {
+const fetchDataForcountry = async (country) => {
     try {
         const res = await fetch('https://countriesnow.space/api/v0.1/countries/population/cities/filter', {
             method: 'POST',
@@ -48,7 +50,7 @@ const fetchDataForcity = async (country) => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                'limit': 20,
+                'limit': 35,
                 'order': "asc",
                 'orderBy': "populationCounts",
                 'country': country,
@@ -60,3 +62,5 @@ const fetchDataForcity = async (country) => {
         console.log(error);
     }
 };
+
+export default { continentsArr, fetchDataForcontinents, fetchData, fetchDataForcountry, worldObj };

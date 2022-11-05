@@ -1,12 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap");
-
-*{
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.mainCountry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.btn {
+    padding: 5px;
+    margin: 5px;
+    font-size: 17px;
+    background-color: lightblue;
+    border: 2px solid lightcyan;
+    border-radius: 0.3rem;
+    color: rgb(255, 111, 0);
+}
 .allCountry {
-    background-color: aqua;
+    background-color: rgb(104, 148, 148);
     position: absolute;
     min-height: 100%;
     width: 100%;
@@ -21,14 +36,16 @@
     font-size: 2rem;
     margin-bottom: 10rem;
 }
-.mainCountry {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.allCountry .contintsSelect button {
+    box-shadow: 5px 4px 5px black;
+    color: black;
+    padding: 5px;
+    margin-bottom: 10px;
 }
 .chart {
     width: 60vw;
     height: fit-content;
 }
-
+.hidden {
+    display: none;
+}
